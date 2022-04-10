@@ -1,25 +1,98 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useRef } from "react";
+import assets from "./assets";
+import { SectionWrapper, FounderIntro } from "./components";
+import styles from "./styles/Global";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-function App() {
+const App = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    gsap.fromTo(
+      [".foundersTitleText", ".founder_intro__container"],
+
+      {
+        opacity: 0,
+        ease: "none",
+      },
+      {
+        opacity: 1,
+        ease: "none",
+
+        duration: 0.5,
+        stagger: 0.5,
+
+        scrollTrigger: {
+          trigger: ".foundersTitleText",
+          start: "top bottom-=200",
+
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <>
+      <div className="app__apni_academy__container">
+        <SectionWrapper
+          title="Apni Academy"
+          description="DEMOCRATISE EDUCATION"
+          banner="banner"
+          showLogo
+        />
+        <img
+          src={assets.education_illustrations}
+          className="app__apni_academy_section_wrapper__image"
+        ></img>
+      </div>
+
+      <SectionWrapper
+        title="Our Mission"
+        description="Democratise access to high quality education."
+        graphicImg={assets.our_mission}
+        reverse
+        titleRef={useRef(null)}
+        descRef={useRef(null)}
+      />
+
+      <div className={`banner03 ${styles.flexCenter} flex-col text-white`}>
+        <h1 className={`${styles.h1Text} mt-10 foundersTitleText`}>Founders</h1>
+        <div className={`${styles.flexTop}`}>
+          <FounderIntro founderImg={assets.v_t} name="Vaibhav Tyagi (CEO)" />
+          <FounderIntro founderImg={assets.m_k} name="Mahesh Kutty (CTO)" />
+          <FounderIntro founderImg={assets.d_p} name="Dhawal Patil (CFO)" />
+        </div>
+      </div>
+
+      <SectionWrapper
+        title="About Us"
+        description="We are working on a disruptive educational platform. It will
+totally change the way education is delivered to everyone.
+It is a highly scalable model that directly creates value for
+100 million students."
+        graphicImg={assets.about_us_final}
+        reverse
+        titleRef={useRef(null)}
+        descRef={useRef(null)}
+      />
+
+      <div className="px-4 py-2 justify-center items-center bg-primary flex-column text-center banner04">
+        <p className={`${styles.pText} ${styles.whiteText}`}>
+          Website built by{" "}
+          <a
+            href="https://www.linkedin.com/in/vedant-panchal-b1480619b"
+            target="_blank"
+            rel="noopener"
+          >
+            <span className="italic underline made_by__name">
+              Vedant Panchal
+            </span>
+          </a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
