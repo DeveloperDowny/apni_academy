@@ -1,1 +1,1 @@
-Apni Academy
+Landing Page of Apni Academy
