@@ -15,6 +15,8 @@ const styles = {
     "font-bold font-IBMPlex text-5xl sm:text-4xl minmd:text-6xl minlg:text-8xl leading-12 minmd:leading-13",
   pText:
     "my-5 minmd:my-10 font-IBMPlex font-light text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16",
+  madeByText:
+    "my-5 font-IBMPlex font-light text-l minmd:text-3l minlg:text-4l minmd:leading-16",
   founderNameText:
     "my-5 minmd:my-10 font-IBMPlex font-semibold text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16 text-center",
   descriptionText:
@@ -27,6 +29,7 @@ const styles = {
     "bg-black flex items-center py-2 px-4 rounded-md mt-2 w-fit cursor-pointer",
 
   section: "flex justify-center items-center p-16 sm:p-6",
+  contactUs: "flex justify-center items-center pt-64 sm:pt-64 pl-16 sm:pl-6",
   subSection: "flex items-center w-full minmd:w-3/4",
   descDiv: "flex-1 w-full flex justify-start flex-col md:mb-10 ",
 

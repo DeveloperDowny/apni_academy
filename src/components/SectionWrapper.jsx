@@ -32,7 +32,7 @@ const SectionWrapper = ({
           ease: "none",
 
           duration: 0.5,
-          stagger: 0.5,
+          stagger: 0.25,
 
           scrollTrigger: {
             trigger: titleRef.current,

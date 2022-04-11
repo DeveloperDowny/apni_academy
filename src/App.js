@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import assets from "./assets";
-import { SectionWrapper, FounderIntro } from "./components";
+import { SectionWrapper, FounderIntro, ContactUs } from "./components";
 import styles from "./styles/Global";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -25,8 +25,6 @@ const App = () => {
         scrollTrigger: {
           trigger: ".foundersTitleText",
           start: "top bottom-=200",
-
-          toggleActions: "play none none reverse",
         },
       }
     );
@@ -76,21 +74,11 @@ It is a highly scalable model that directly creates value for
         titleRef={useRef(null)}
         descRef={useRef(null)}
       />
-
-      <div className="px-4 py-2 justify-center items-center bg-primary flex-column text-center banner04">
-        <p className={`${styles.pText} ${styles.whiteText}`}>
-          Website built by{" "}
-          <a
-            href="https://www.linkedin.com/in/vedant-panchal-b1480619b"
-            target="_blank"
-            rel="noopener"
-          >
-            <span className="italic underline made_by__name">
-              Vedant Panchal
-            </span>
-          </a>
-        </p>
-      </div>
+      <ContactUs
+        banner={"banner04"}
+        titleRef={useRef(null)}
+        descRef={useRef(null)}
+      />
     </>
   );
 };
